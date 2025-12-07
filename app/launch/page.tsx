@@ -77,8 +77,12 @@ export default function LaunchPage() {
       // After OTP, all roles proceed to company info
       setStep(4);
     } else if (step === 4) {
-      // After company info, complete onboarding
-      router.push('/pool');
+      // After company info, complete onboarding - redirect based on role
+      if (formData.role === 'custodian') {
+        router.push('/dashboard/custodian');
+      } else {
+        router.push('/pool');
+      }
     }
   };
 
