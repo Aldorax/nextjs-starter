@@ -119,7 +119,7 @@ export default function MyPoolPage() {
               <span className="text-sm font-medium text-[#1A1A1A]">My Pool</span>
             </div>
 
-            <button className="flex items-center gap-[14px] py-3 px-4">
+            <Link href="/compliance" className="flex items-center gap-[14px] py-3 px-4">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path
                   fillRule="evenodd"
@@ -129,7 +129,7 @@ export default function MyPoolPage() {
                 />
               </svg>
               <span className="text-sm font-medium text-[#BABABA]">Compliance Requests</span>
-            </button>
+            </Link>
 
             <button className="flex items-center gap-[14px] py-3 px-4">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
