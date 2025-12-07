@@ -90,7 +90,7 @@ export default function LaunchPage() {
 
           {/* Step 1: Create Account */}
           {step === 1 && (
-            <div className="flex flex-col items-center gap-10 w-full">
+            <div className="flex flex-col items-center gap-8 w-full">
               <div className="flex flex-col items-center gap-2 text-center">
                 <h1 className="text-2xl font-normal leading-[120%] tracking-[-0.48px] text-black">
                   Welcome!<br />Let&apos;s Create Your Account
