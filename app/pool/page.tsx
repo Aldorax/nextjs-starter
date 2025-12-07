@@ -207,7 +207,7 @@ export default function MyPoolPage() {
               </p>
             </div>
 
-            <button className="flex items-center gap-1 px-5 py-3 bg-[#F44C15] text-white rounded-full text-sm font-medium hover:bg-[#E03D0C] transition-colors">
+            <Link href="/pool/new" className="flex items-center gap-1 px-5 py-3 bg-[#F44C15] text-white rounded-full text-sm font-medium hover:bg-[#E03D0C] transition-colors">
               Create New Pool
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -215,7 +215,7 @@ export default function MyPoolPage() {
                   fill="white"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
 
           {/* Filters */}
