@@ -71,9 +71,9 @@ export default function LaunchPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-8 bg-[#FAFAFA]">
-      <div className="w-full max-w-[528px] bg-white rounded-[30px] border border-[#E8E8E8] p-8 md:p-12">
-        <div className="flex flex-col items-center gap-10 md:gap-[60px]">
+    <div className="min-h-screen flex items-center justify-center px-4 py-6 sm:py-8 bg-[#FAFAFA]">
+      <div className="w-full max-w-[528px] bg-white rounded-[30px] border border-[#E8E8E8] p-6 sm:p-8 md:p-10">
+        <div className="flex flex-col items-center gap-8 md:gap-10">
           {/* Logo */}
           <div className="flex items-center gap-[7px]">
             <Image
