@@ -319,7 +319,7 @@ export default function LaunchPage() {
 
           {/* Step 4: Role Selection */}
           {step === 4 && (
-            <div className="flex flex-col items-center gap-10 w-full">
+            <div className="flex flex-col items-center gap-8 w-full">
               <h1 className="text-2xl font-normal leading-[120%] tracking-[-0.48px] text-black text-center">
                 What best describes your role?
               </h1>
