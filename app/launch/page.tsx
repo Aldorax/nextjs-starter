@@ -270,7 +270,7 @@ export default function LaunchPage() {
             </div>
           )}
 
-          {/* Step 3: Verify Email */}
+          {/* Step 3: OTP Verification */}
           {step === 3 && (
             <div className="flex flex-col items-center gap-8 md:gap-10 w-full">
               <div className="flex flex-col items-center gap-2 text-center">
