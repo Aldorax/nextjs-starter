@@ -22,15 +22,47 @@ export default function LaunchPage() {
   };
 
   const handleCodeChange = (index: number, value: string) => {
-    if (value.length <= 1) {
+    if (value.length <= 1 && /^\d*$/.test(value)) {
       const newCode = [...formData.verificationCode];
       newCode[index] = value;
       setFormData(prev => ({ ...prev, verificationCode: newCode }));
-      
+
       if (value && index < 5) {
-        const nextInput = document.getElementById(`code-${index + 1}`);
+        const nextInput = document.getElementById(`code-${index + 1}`) as HTMLInputElement;
         nextInput?.focus();
       }
+    }
+  };
+
+  const handleCodeKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Backspace') {
+      e.preventDefault();
+      const newCode = [...formData.verificationCode];
+      if (formData.verificationCode[index]) {
+        newCode[index] = '';
+        setFormData(prev => ({ ...prev, verificationCode: newCode }));
+      } else if (index > 0) {
+        const prevInput = document.getElementById(`code-${index - 1}`) as HTMLInputElement;
+        prevInput?.focus();
+      }
+    } else if (e.key === 'ArrowLeft' && index > 0) {
+      const prevInput = document.getElementById(`code-${index - 1}`) as HTMLInputElement;
+      prevInput?.focus();
+    } else if (e.key === 'ArrowRight' && index < 5) {
+      const nextInput = document.getElementById(`code-${index + 1}`) as HTMLInputElement;
+      nextInput?.focus();
+    }
+  };
+
+  const handleCodePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const pastedData = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
+    if (pastedData.length > 0) {
+      const newCode = [...formData.verificationCode];
+      for (let i = 0; i < pastedData.length && i < 6; i++) {
+        newCode[i] = pastedData[i];
+      }
+      setFormData(prev => ({ ...prev, verificationCode: newCode }));
     }
   };
 
