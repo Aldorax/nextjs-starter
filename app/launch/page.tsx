@@ -186,12 +186,14 @@ export default function LaunchPage() {
                       key={index}
                       id={`code-${index}`}
                       type="text"
+                      inputMode="numeric"
                       maxLength={1}
                       value={formData.verificationCode[index]}
                       onChange={(e) => handleCodeChange(index, e.target.value)}
-                      className={`flex-1 h-16 text-center rounded-[15px] border text-sm font-medium text-[#1A1A1A] focus:outline-none focus:border-[#F44C15] ${
-                        formData.verificationCode[index] ? 'border-[#D1D1D1]' : 'border-[#D1D1D1]'
-                      }`}
+                      onKeyDown={(e) => handleCodeKeyDown(index, e)}
+                      onPaste={handleCodePaste}
+                      placeholder=""
+                      className="flex-1 h-16 text-center text-xl font-medium text-[#1A1A1A] rounded-[15px] border border-[#D1D1D1] focus:outline-none focus:border-[#F44C15] focus:border-2 transition-colors"
                     />
                   ))}
                 </div>
