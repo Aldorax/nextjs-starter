@@ -104,7 +104,7 @@ export default function LaunchPage() {
             </span>
           </div>
 
-          {/* Step 1: Create Account */}
+          {/* Step 1: Email & Full Name */}
           {step === 1 && (
             <div className="flex flex-col items-center gap-8 w-full">
               <div className="flex flex-col items-center gap-2 text-center">
