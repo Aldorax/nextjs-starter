@@ -179,8 +179,8 @@ export default function LaunchPage() {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-6 w-full">
-                <div className="flex gap-2">
+              <div className="flex flex-col gap-5 w-full">
+                <div className="flex gap-1 sm:gap-2 w-full">
                   {[0, 1, 2, 3, 4, 5].map((index) => (
                     <input
                       key={index}
@@ -193,7 +193,7 @@ export default function LaunchPage() {
                       onKeyDown={(e) => handleCodeKeyDown(index, e)}
                       onPaste={handleCodePaste}
                       placeholder=""
-                      className="flex-1 h-16 text-center text-xl font-medium text-[#1A1A1A] rounded-[15px] border border-[#D1D1D1] focus:outline-none focus:border-[#F44C15] focus:border-2 transition-colors"
+                      className="flex-1 h-12 sm:h-14 text-center text-lg font-medium text-[#1A1A1A] rounded-[12px] border border-[#D1D1D1] focus:outline-none focus:border-[#F44C15] focus:border-2 transition-colors"
                     />
                   ))}
                 </div>
