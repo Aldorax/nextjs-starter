@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 export default function LaunchPage() {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     fullName: '',
@@ -67,7 +69,21 @@ export default function LaunchPage() {
   };
 
   const handleContinue = () => {
-    if (step < 4) setStep(step + 1);
+    if (step === 2) {
+      setStep(3);
+    } else if (step === 3) {
+      // After OTP, route based on role
+      if (formData.role === 'custodian') {
+        router.push('/auth/custodian/signup');
+      } else if (formData.role === 'originator' || formData.role === 'servicer') {
+        setStep(4);
+      }
+    } else if (step === 4) {
+      // After company info, complete onboarding
+      router.push('/pool');
+    } else {
+      setStep(step + 1);
+    }
   };
 
   return (
