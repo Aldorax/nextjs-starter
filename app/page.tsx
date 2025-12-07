@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Dashboard() {
@@ -49,8 +50,8 @@ export default function Dashboard() {
               </span>
             </button>
 
-            <button
-              onClick={() => setActiveNav('pool')}
+            <Link
+              href="/pool"
               className="flex items-center gap-[14px] py-3 px-4"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -60,7 +61,7 @@ export default function Dashboard() {
                 />
               </svg>
               <span className="text-sm font-medium text-[#BABABA]">My Pool</span>
-            </button>
+            </Link>
 
             <button
               onClick={() => setActiveNav('compliance')}
