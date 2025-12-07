@@ -314,7 +314,7 @@ export default function LaunchPage() {
             </div>
           )}
 
-          {/* Step 4: Company Information (only for Originator & Servicer) */}
+          {/* Step 4: Company Information */}
           {step === 4 && (
             <div className="flex flex-col items-center gap-8 md:gap-10 w-full">
               <div className="flex flex-col items-center gap-2 text-center">
